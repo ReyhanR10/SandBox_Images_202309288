@@ -23,14 +23,16 @@ void setup() {
   picBackground = loadImage("../imagesUsed/New folder/cherry-blossom-tree-nx-1920x1080.jpg");
   //
   //DIVs
-  //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   //
 } //End setup
 //
 void draw() {
+  //Daw image 60 
   //background(255); //builti in BUG, 1 pixel
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
   //
+  println( brightnessControl, nightmode, BrightnessNumber);
   if ( brightnessControl==true ) 
   {//Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( brightnessNumber<1 ) {
@@ -41,22 +43,21 @@ void draw() {
     //Empty ELSE
   }
    tint (255, brightnessNumber);
-   println(brightnessNumber);
   }
-   
-   
   //if ( nightmode==true )  tint ( 64 , 64, 40 ); //Gray Scale: 1/2 tint (i.e 128/256=1/2)
   if ( nightmode==true ) {
-    //tint ( 64, 64, 40 );
-    //println(nightmode);
+    tint ( 64, 64, 40 );
+    println(nightmode);
   } else {
-    //noTint ( ); //See Processing DOC
-    //println(nightmode);
+    noTint ( ); //See Processing DOC
+    println(nightmode);
   }
   image(picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
 } //End draw
 //
 void keyPressed() {
+  //Brightness
+  //
   if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
     if ( nightmode==true ) {
       nightmode = false;
@@ -73,7 +74,6 @@ void keyPressed() {
     //CONTINUE HERE with brightness toggles
   }
   //
-  println( brightnessNumber);
 } //End keyPressed
 //
 void mousePressed() {
