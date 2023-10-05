@@ -16,6 +16,16 @@ void setup() {
   appHeight = height;
   //
   //Population
+  //nightmode=false;
+  int hourNightMode = hour(); //24-hour clock
+  println( hourNightMode );
+  if ( hourNightMode>18 ) {
+    nightmode=true;
+  } else if ( hourNightMode<05 ) {
+    nightmode=true;
+  } else {
+     nightmode=false;
+  }
   backgroundImageX = appWidth*0;
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
