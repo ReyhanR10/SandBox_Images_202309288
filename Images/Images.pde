@@ -36,11 +36,12 @@ void setup() {
   String landScapeImage = "imagesUsed/LandScapeImage + cherry-blossom-tree-nx-1920x1080.jpg";
   picBackground = loadImage( imagesPath + landScapeImage + "imagesUsed/New folder/cherry-blossom-tree-nx-1920x1080.jpg");
   spaceForeground = loadImage();
+  superNovaPotrait = loadImage();
   //
   //DIVs
   //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect();
-  rect();
+  rect(); //space image
+  rect(); //supernova image
   //
 } //End setup
 //
@@ -70,14 +71,14 @@ void draw() {
     //println(nightmode);
   }
   image(picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
-  image(spaceForeground,);
-  image(supernovaForeground);
+  image(spaceForeground);
+  image(superNovaPotrait);
 } //End draw
 //
 void keyPressed() {
   if ( key=='n' || key=='N' ) { //Nightmode, basic control is Boolean
     if ( nightmode==true ) {
-      nightmode = false;
+      nightmode = false; 
     } else {
       nightmode = true;
     }
