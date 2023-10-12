@@ -32,7 +32,7 @@ void setup() {
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
-  String imagesPath = up + open + up + open + up + open;
+  String imagesPath = up + open;
   String landScapeImage = "imagesUsed/LandScapeImage + cherry-blossom-tree-nx-1920x1080.jpg";
   picBackground = loadImage( imagesPath + landScapeImage + "imagesUsed/New folder/cherry-blossom-tree-nx-1920x1080.jpg");
   spaceForeground = loadImage();
@@ -71,8 +71,8 @@ void draw() {
     //println(nightmode);
   }
   image(picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
-  image(spaceForeground);
-  image(superNovaPotrait);
+  image(spaceForeground, );
+  image(superNovaPotrait, );
 } //End draw
 //
 void keyPressed() {
