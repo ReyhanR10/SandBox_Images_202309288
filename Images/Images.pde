@@ -4,6 +4,8 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
+float spaceX, spaceY, spaceWidth, spaceHeight;
+float  supernX, supernY, supernWidth, supernHeight;
 PImage picBackground, spaceForeground;
 Boolean nightmode=false; //Note: clock and turn on automatically
 Boolean brightnessControl=false; //Note: ARROWS
@@ -29,19 +31,42 @@ void setup() {
   backgroundImageY = appHeight*0;
   backgroundImageWidth = appWidth-1;
   backgroundImageHeight = appHeight-1;
+  spaceX = appWidth*1/14;
+  spaceY = appHeight*1/8;
+  spaceWidth = appWidth*2.25/7; // 2/4
+  spaceHeight = appHeight*1/4; // 2/8
+  supernX = spaceX; 
+  supernY = appHeight*5/8; 
+  supernWidth = spaceWidth;
+  supernHeight = spaceHeight;
+  //Aspect Ratio Calcuations 
+  //Determine Aspect Ratio
+  //Compare dimension to get larger dimension
+  //Calculate Smaller Dimension
+  //Rewrite Variables based on rect() var
+  cherryImageWidth = ;
+  cherryImageHeight = ;
+  spaceImageWidth = ;
+  spaceImageHeight = ;
+  supernImageWidth = ;
+  supernImageHeight = ;
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
   String imagesPath = up + open;
-  String landScapeImage = "imagesUsed/LandScapeImage + cherry-blossom-tree-nx-1920x1080.jpg";
-  picBackground = loadImage( imagesPath + landScapeImage + "imagesUsed/New folder/cherry-blossom-tree-nx-1920x1080.jpg");
-  spaceForeground = loadImage();
-  superNovaPotrait = loadImage();
+  String landScapeImage = "imagesUsed/LandScape & Square Image/";
+  String potraitImage = "imageUsed/Potrait/";
+  String cherryImage = "cherry-blossom-tree-nx-1920x1080.jpg";
+  String spaceImage = "Space-Background-Image-2.jpg";
+  String supernImage = "istockphoto-1040334020-612x612.jpg";
+  picBackground = loadImage( imagesPath + landScapeImage + cherryImage); //Concatenation
+  spaceForeground = loadImage( imagesPath + landscapeImage + spaceImage);
+  superNovaPotrait = loadImage( imagesPath + landscapeImage + supernImage);
   //
   //DIVs
   //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect(); //space image
-  rect(); //supernova image
+  rect( spaceX, spaceY, spaceWidth, spaceHeight ); //space image
+  rect( supernX, supernY, supernWidth, supernHeight ); //Supernova Image
   //
 } //End setup
 //
@@ -70,9 +95,9 @@ void draw() {
     noTint ( ); //See Processing DOC
     //println(nightmode);
   }
-  image(picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
-  image(spaceForeground, );
-  image(superNovaPotrait, );
+  image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+  image( spaceForeground, spaceX, spaceY, spaceWidth, spaceHeight );
+  image( superNovaPotrait, supernX, supernY, supernWidth, supernHeight );
 } //End draw
 //
 void keyPressed() {
