@@ -6,7 +6,7 @@ int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
 float spaceX, spaceY, spaceWidth, spaceHeight;
 float  supernX, supernY, supernWidth, supernHeight;
-PImage picBackground, spaceForeground;
+PImage picBackground, spaceForeground, superNovaPotrait;
 Boolean nightmode=false; //Note: clock and turn on automatically
 Boolean brightnessControl=false; //Note: ARROWS
 int brightnessNumber=128; //Range:1-255
@@ -43,30 +43,29 @@ void setup() {
   //Determine Aspect Ratio
   //Compare dimension to get larger dimension
   //Calculate Smaller Dimension
-  //Rewrite Variables based on rect() var
-  cherryImageWidth = ;
-  cherryImageHeight = ;
-  spaceImageWidth = ;
-  spaceImageHeight = ;
-  supernImageWidth = ;
-  supernImageHeight = ;
+  //Rewrite Variables based on rect() vars
+  //cherryImageWidth = ;
+  //spaceImageWidth = ;
+ //spaceImageHeight = ;
+  //supernImageWidth = ;
+//supernImageHeight = ;
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
   String imagesPath = up + open;
   String landScapeImage = "imagesUsed/LandScape & Square Image/";
   String potraitImage = "imageUsed/Potrait/";
-  String cherryImage = "cherry-blossom-tree-nx-1920x1080.jpg";
+  String cherryImage = "imagesUsed/New folder";
   String spaceImage = "Space-Background-Image-2.jpg";
   String supernImage = "istockphoto-1040334020-612x612.jpg";
   picBackground = loadImage( imagesPath + landScapeImage + cherryImage); //Concatenation
-  spaceForeground = loadImage( imagesPath + landscapeImage + spaceImage);
-  superNovaPotrait = loadImage( imagesPath + landscapeImage + supernImage);
+  spaceForeground = loadImage( imagesPath + landScapeImage + spaceImage);
+  superNovaPotrait = loadImage( imagesPath + potraitImage + supernImage);
   //
   //DIVs
   //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect( spaceX, spaceY, spaceWidth, spaceHeight ); //space image
-  rect( supernX, supernY, supernWidth, supernHeight ); //Supernova Image
+  //rect( spaceX, spaceY, spaceWidth, spaceHeight ); //space image
+  //rect( supernX, supernY, supernWidth, supernHeight ); //Supernova Image
   //
 } //End setup
 //
