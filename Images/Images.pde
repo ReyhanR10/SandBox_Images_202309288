@@ -94,6 +94,9 @@ void draw() {
     noTint ( ); //See Processing DOC
     //println(nightmode);
   }
+  rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
+  rect( spaceX, spaceY, spaceWidth, spaceHeight ); //space image
+  rect( supernX, supernY, supernWidth, supernHeight ); //Supernova Image
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   image( spaceForeground, spaceX, spaceY, spaceWidth, spaceHeight );
   image( superNovaPotrait, supernX, supernY, supernWidth, supernHeight );
