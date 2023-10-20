@@ -46,16 +46,16 @@ void setup() {
   //Rewrite Variables based on rect() vars
   //cherryImageWidth = ;
   //spaceImageWidth = ;
- //spaceImageHeight = ;
+  //spaceImageHeight = ;
   //supernImageWidth = ;
-//supernImageHeight = ;
+  //supernImageHeight = ;
   //Concatenation of Pathways
-  String up = "..";
+  String up = "";
   String open = "/";
   String imagesPath = up + open;
-  String landScapeImage = "imagesUsed/LandScape & Square Image/";
-  String potraitImage = "imageUsed/Potrait/";
-  String cherryImage = "imagesUsed/New folder";
+  String landScapeImage = "imagesUsed/";
+  String potraitImage = "imageUsed/";
+  String cherryImage = "cherry-blossom-tree-nx-1920x1080.jpg";
   String spaceImage = "Space-Background-Image-2.jpg";
   String supernImage = "istockphoto-1040334020-612x612.jpg";
   picBackground = loadImage( imagesPath + landScapeImage + cherryImage); //Concatenation
@@ -94,7 +94,7 @@ void draw() {
     noTint ( ); //See Processing DOC
     //println(nightmode);
   }
-  image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
+  image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
   image( spaceForeground, spaceX, spaceY, spaceWidth, spaceHeight );
   image( superNovaPotrait, supernX, supernY, supernWidth, supernHeight );
 } //End draw
