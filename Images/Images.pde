@@ -4,8 +4,8 @@
 //Global Variables
 int appWidth, appHeight;
 float backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight;
-float animeX, animeY, animeWidthRect, animeHeightRect, animeWidth, animeHeight;
-float gunX, gunY, gunWidthRect, gunHeightRect, gunWidth, gunHeight;
+float animeXrect, animeYrect, animeWidthRect, animeHeightRect, animeWidth, animeHeight;
+float gunXrect, gunYrect, gunWidthRect, gunHeightRect, gunWidth, gunHeight;
 PImage picBackground, animeForeground, gunPortrait;
 //
 void setup() {
@@ -38,25 +38,26 @@ void setup() {
   gunWidth = 1200.0;
   gunHeight = 675.0;
   float aspectRatio = 0.0; //Local Variables
-  float rectDimaensionMemory = 0.0; //Assigned ZERO b/c IF'
-  if ( animeWidth >= animeHeight ) { //ANIME Image if Landscape
-  //Comparison Verification
-  aspectRatio = animeHeight / animeWidth; // smaller/larger=0 if int
-  //memory of smaller side
-  animeWidth = animeWidthRect;
-  animeHeight = aspectRatio * animeWidth;
-  //if () {} //ERROR Catch is bikeHeight > bikeHeightRect
-  println("ANIME is Landscape");
-  } else { //ANIME Image if Potrait
-  //Comparison Verification
-  println("ANIME is Potrait");
-    //Repeat Aspect Ratio
-    //Comparison Verification
-    aspectRatio = animeHeight / animeWidth; {// smaller/larger=0 if int
-    //memory of smaller side
-    animeHeight = animeWidthRect;
-    animeHeight = aspectRatio * animeWidth;
-    //if () {} //ERROR Catch is bikeHeight > bikeHeightRect 
+   if ( animeWidth >= animeHeight ) { //ANIME Image if Landscape
+   //Comparison Verification
+   println("ANIME is Landscsape");
+   aspectRatio = animeHeight / animeWidth; // smaller/larger=0 if int
+   //memory of smaller side
+   animeWidth = animeWidthRect;
+   animeHeight = aspectRatio * animeWidth;
+   if ( animeHeight > animeHeightRect ) { //ERROR Catch is animeHeight > animeHeightRect
+      println("ERROR: Aspect Calculation Too Big");
+     }
+   } else { //ANIME Image if Potrait
+   //Comparison Verification
+   println("ANIME is Potrait");
+   //Repeat Aspect Ratio
+   //Comparison Verification
+   aspectRatio = animeHeight / animeWidth; {// smaller/larger=0 if int
+   //memory of smaller side
+   animeHeight = animeWidthRect;
+   animeHeight = aspectRatio * animeWidth;
+   //if () {} //ERROR Catch is bikeHeight > bikeHeightRect 
   } //End IF
   if ( gunWidth >= gunHeight ) { //GUN Image if Landscape
   //Comparison Verification
@@ -101,16 +102,13 @@ void draw() {
   rect( backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight);
   //
   image( picBackground, backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  rect( animeXrect, animeYrect, animeWidthrect, animeHeightrect);
-  image( animeForeground, animeXrect, animeYrect, animeWidth, animeHeight );
-  println(animeForeground, animeXrect, animeYrect, animeWidth, animeHeight);
-  
-  rect( gunXrect, gunYrect, gunWidthrect, gunHeightrect);
-  image( gunPortrait, gunXrect, gunYrect, gunWidth, gunHeight );
-  println(gunPortrait, gunXrect, gunYrect, gunWidth, gunHeight);
   //
-
-  rect(gunXrect, gunYrect, gunWidthrect, gunHeightrect);
+  rect( animeXrect, animeYrect, animeWidthRect, animeHeightRect );
+  image( animeForeground, animeXrect, animeYrect, animeWidth, animeHeight );
+  //
+  rect( gunXrect, gunYrect, gunWidthRect, gunHeightRect );
+  image( gunPortrait, animeXrect, animeYrect, animeWidth, animeHeight);
+  //
 } //End draw
 //
 void keyPressed() {
