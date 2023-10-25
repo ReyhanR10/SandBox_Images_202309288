@@ -35,8 +35,8 @@ void setup() {
   //Aspect Ratio Change
   animeWidth = 1200.0;
   animeHeight = 673.0;
-  gunWidth = 1200.0;
-  gunHeight = 675.0;
+  gunWidth = 3000.0;
+  gunHeight = 3000.0;
   float aspectRatio = 0.0; //Local Variables
    if ( animeWidth >= animeHeight ) { //ANIME Image if Landscape
    //Comparison Verification
@@ -73,27 +73,27 @@ void setup() {
     gunHeight = aspectRatio * gunWidth;
     if ( gunWidth > gunWidthRect ) {} //ERROR Catch is gunHeightRect . gunHeight
     println("ERROR: Aspect Calculation Too Big");
-  }
+    }
   } //End if
   //Error Check of Smaller Dimension
   //
   //Concatenation of Pathways
   String up = "..";
   String open = "/";
-  String imagesPath = up + open + up + open +up + open + up + open;
+  String imagesPath = up + open + up + open;
   String landScapeImage = "imagesUsed/Landscape & Square Images/";
-  String potraitImage = "imageUsed/Potrait/";
+  String portraitImage = "imagesUsed/Portrait/";
   String cherryImage = "cherry-blossom-tree-nx-1920x1080.jpg";
   String animeImage = "pngtree-anime-of-a-grey-girl-hd-wallpaper-picture-image_3173535.jpg";
-  String gunImage = "EUNlYYSWsAI_sNb.jpg";
+  String gunImage = "sbfakglf3z651.jpg";
   picBackground = loadImage( imagesPath + landScapeImage + cherryImage ); //Concatenation
   animeForeground = loadImage( imagesPath + landScapeImage + animeImage );
-  gunPortrait = loadImage( imagesPath + potraitImage + gunImage );
+  gunPortrait = loadImage( imagesPath + portraitImage + gunImage );
   //
   //DIVs
   //rect(backgroundImageX, backgroundImageY, backgroundImageWidth, backgroundImageHeight );
-  //rect( animeX, animeY, animeWidth, animeHeight ); //anime image
-  //rect( gunX, gunY, gunWidth, gunHeight ); //Gun Image
+  //rect( animeXrect, animeYrect, animeWidth, animeHeight ); //anime image
+  //rect( gunXrect, gunYrect, gunWidth, gunHeight ); //Gun Image
   //
 } //End setup
 //
